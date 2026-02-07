@@ -31,7 +31,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ttimbers/dsci522-dockerfile-practice # change to your image
+          images: ${{ secrets.DOCKER_USERNAME }}/dsci310-ia3-${{ secrets.DOCKER_USERNAME }}-docker
           tags: |
             type=raw, value={{sha}},enable=${{github.ref_type != 'tag' }}
             type=raw, value=latest
